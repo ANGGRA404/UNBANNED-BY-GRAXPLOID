@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARONZ UNBANNED</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      color: #00ff88;
+      margin-top: 40px;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    h4 {
+      color: #00ff88;
+      margin-top: -5px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+
+    img {
+      width: 100px;
+      margin-top: 15px;
+      border-radius: 50%;
+    }
+
+    h3 {
+      color: #00ff88;
+      margin-top: 10px;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    .container {
+      margin: 40px auto;
+      width: 85%;
+      max-width: 400px;
+      background: #0a0a0a;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #111;
+      color: #00ff88;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .radios {
+      text-align: left;
+      margin-top: 15px;
+      margin-left: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      accent-color: #00ff88;
+      margin-right: 8px;
+      transform: scale(1.2);
+    }
+
+    button {
+      width: 90%;
+      background: #00ff88;
+      border: none;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background: #00cc66;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>ARONZ UNBANNED</h2>
+  <h4>By ANGGRA</h4>
+  <img src="/UnBanned/img/1760414985922.png" alt="User Icon">
+  <h3>UNBANNED</h3>
+
+  <div class="container">
+    <p><b>Nomor WhatsApp yang Diblokir</b></p>
+    <input type="text" id="nomor" placeholder="+62 XXX XXXX XXXX">
+
+    <div class="radios">
+      <p><b>Opsi Unbanned</b><br><small>Pilih salah satu opsi:</small></p>
+      <label><input type="radio" name="opsi" value="Spam">Spam</label>
+      <label><input type="radio" name="opsi" value="Permanen">Permanen</label>
+      <label><input type="radio" name="opsi" value="Device">Device</label>
+    </div>
+
+    <button onclick="kirimEmail()">KIRIM UNBANNED</button>
+  </div>
+
+  <footer>© 2025 ARONZ TEAM | Powered by Anggra</footer>
+
+  <script>
+    function kirimEmail() {
+      const nomor = document.getElementById('nomor').value.trim();
+      const opsi = document.querySelector('input[name="opsi"]:checked');
+
+      if (!nomor) {
+        alert("Masukkan nomor WhatsApp yang diblokir!");
+        return;
+      }
+
+      if (!opsi) {
+        alert("Pilih salah satu opsi unbanned!");
+        return;
+      }
+
+      // Subjek dan isi pesan otomatis
+      const subject = `Permintaan Unban WhatsApp (${opsi.value})`;
+      const body = `Halo Tim WhatsApp Support,\n\nSaya ingin mengajukan permintaan unban untuk nomor saya: ${nomor}\nJenis blokir: ${opsi.value}\n\nMohon bantuan untuk memulihkan akses akun saya.\n\nTerima kasih.\n\nHormat saya,\nPengguna ARONZ UNBANNED`;
+
+      const mailtoLink = `mailto:support@whatsapp.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    }
+  </script>
+
+</body>
+</html>
